@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Values version="2.0">
+  <record name="record" javaclass="com.wm.util.Values">
+    <value name="node_type">record</value>
+    <value name="node_subtype">unknown</value>
+    <value name="node_nsName">uc2_consumer.productconsumer.fetchProducts_.docTypes:getProductByID_GET_response</value>
+    <value name="node_pkg">ProductInventory_Customer</value>
+    <value name="is_public">false</value>
+    <value name="field_type">record</value>
+    <value name="field_dim">0</value>
+    <value name="nillable">true</value>
+    <value name="form_qualified">false</value>
+    <value name="is_global">false</value>
+    <value name="originURI">file://C:\Users\MirHussainAli\OneDrive - IBM\mirhali_data\Clients\Starbucks\PoC\sbux_provider_localapi_sbuxproductsapi.json</value>
+    <array name="rec_fields" type="record" depth="1">
+      <record javaclass="com.wm.util.Values">
+        <value name="node_type">record</value>
+        <value name="node_subtype">unknown</value>
+        <value name="is_public">false</value>
+        <value name="field_name">productDetails</value>
+        <value name="field_type">recref</value>
+        <value name="field_dim">1</value>
+        <value name="nillable">true</value>
+        <value name="form_qualified">false</value>
+        <value name="is_global">false</value>
+        <value name="is_soap_array_encoding_used">false</value>
+        <value name="modifiable">true</value>
+        <value name="rec_ref">uc2_consumer.productconsumer.fetchProducts_.docTypes:ProductInventoryJSONDT</value>
+      </record>
+    </array>
+    <value name="modifiable">false</value>
+  </record>
+</Values>

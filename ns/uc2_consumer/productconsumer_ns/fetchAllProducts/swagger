@@ -1,0 +1,85 @@
+---
+swagger: "2.0"
+info:
+  description: "cloud native sbuxproductsapi"
+  version: "1.0"
+  title: "cloud_sbuxproductsapi"
+host: "starbuckspocone.apigw-aw-eu.webmethods.io"
+basePath: "/gateway/cloud_sbuxproductsapi/1.0"
+schemes:
+- "https"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+security:
+- apiKey: []
+paths:
+  /lookupAllProducts:
+    get:
+      operationId: "lookupAllProducts_GET_1"
+      consumes: []
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/lookupAllProducts_GET_response_1"
+        "401":
+          description: "Access Denied"
+securityDefinitions:
+  apiKey:
+    type: "apiKey"
+    name: "x-Gateway-APIKey"
+    in: "header"
+definitions:
+  productDetail:
+    type: "object"
+    required:
+    - "activeInd"
+    - "countryCode"
+    - "name"
+    - "price"
+    - "productId"
+    - "productType"
+    - "publishStatus"
+    properties:
+      activeInd:
+        type: "string"
+      countryCode:
+        type: "string"
+      name:
+        type: "string"
+      price:
+        type: "string"
+      productId:
+        type: "integer"
+        format: "int32"
+      productType:
+        type: "string"
+      publishStatus:
+        type: "string"
+  productDetails:
+    type: "object"
+    required:
+    - "id"
+    - "productDetail"
+    - "publishTimestamp"
+    properties:
+      id:
+        type: "string"
+      productDetail:
+        $ref: "#/definitions/productDetail"
+      publishTimestamp:
+        type: "string"
+  lookupAllProducts_GET_response_1:
+    type: "object"
+    required:
+    - "productDetails"
+    properties:
+      productDetails:
+        type: "array"
+        items:
+          $ref: "#/definitions/productDetails"
